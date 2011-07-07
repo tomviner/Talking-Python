@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+import sys
 import nltk
 
 def get_parts(text):
@@ -12,4 +14,5 @@ def get_parts(text):
     return dic
 
 if __name__ == '__main__':
-    get_parts("hi how are you")
+    print get_parts(sys.argv[1])
+
