@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import sys
 import nltk
 
 def get_parts(text):
