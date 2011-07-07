@@ -14,4 +14,4 @@ def get_parts(text):
 
 if __name__ == '__main__':
     print get_parts(sys.argv[1])
-    
+
