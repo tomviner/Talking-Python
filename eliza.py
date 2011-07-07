@@ -19,6 +19,13 @@ class Responses:
         if 'NNS' in parts:
             return "Tell me how %s make you feel?" % random.choice(parts['NNS'])
 
+    def response_verb1(parts):
+        if 'VB' in parts:
+            verb = random.choice(parts['VB'])
+            day = random.choice('Mondays Wednesdays Toast Acid'.split())
+            return "Wow, I love to %s too, especially on %s. When do you like to %s?" % (verb, day, verb)
+        else: return "That's kind of dull. Tell me about your Mother?"            
+
 output = INITIAL_PROMPT
 while True:
     input = raw_input(PROMPT + output + "\n")
