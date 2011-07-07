@@ -13,7 +13,7 @@ class Responses:
 
     def response_noun1(parts):
         if 'NN' in parts:
-            return "Why do you like %s?" % random.choice(parts['NN'])
+            return "Why do you like %ss?" % random.choice(parts['NN'])
 
     def response_nouns1(parts):
         if 'NNS' in parts:
