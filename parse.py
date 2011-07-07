@@ -11,5 +11,5 @@ def get_parts(text):
             dic[part] = [work]
     return dic
 
-print get_parts("hi how are you")
-    
+if __name__ == '__main__':
+    get_parts("hi how are you")
