@@ -7,19 +7,26 @@ from parse import get_parts
 PROMPT = '> '
 INITIAL_PROMPT = 'How are you feeling?'
 
-def response(s):
-    STOCK = ["Hello, what's your favorite animal?"]
-    return random.choice(STOCK)
+class Responses:
+    def response_stock(parts):
+        return "How do you feel about that" 
 
-def response2(s):
-    parts = get_parts(s)
-    if 'NN' in parts:
-        return "Why do you like %s?" % random.choice(parts['NN'])
-    else:
-        return response(s)
-        
+    def response_noun1(parts):
+        if 'NN' in parts:
+            return "Why do you like %s?" % random.choice(parts['NN'])
+
+    def response_nouns1(parts):
+        if 'NNS' in parts:
+            return "Tell me how %s make you feel?" % random.choice(parts['NNS'])
+
 output = INITIAL_PROMPT
-while(True):
+while True:
     input = raw_input(PROMPT + output + "\n")
-    output = response2(input)
-
+    parts = get_parts(input)
+    funcs = [f for (n, f) in Responses.__dict__.items() if callable(f)]
+    while True:
+        resp = random.choice(funcs)
+        funcs.remove(resp)
+        output = resp(parts)
+        if output:
+            break
