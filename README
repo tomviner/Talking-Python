@@ -1,0 +1,8 @@
+London Python Dojo Season 2 Finale
+==================================
+
+8 July 2011
+
+Task: Create an eliza like chatbot.
+
+We use NLTK to write responses based on words of selected "parts of speech".
